@@ -4,15 +4,12 @@ import SectionCard from '../components/SectionCard'
 import SectionsRows from '../components/SectionsRows.jsx'
 import SectionsColumns from '../components/SectionsColumns.jsx'
 import Help from '../components/Help.jsx'
+import InfoBar from '../components/InfoBar'
 const Home = () => {
   return (
     <div style={{display: 'flex', flexDirection: 'column', flexGrow: 1}}> 
-    <div className="Top-bar">
-        
-    <div  className="Page-title " >Titulo da pagina</div>
-    <div className='Page-info' onClick={() => alert('informações')}>informações</div>
-  </div>
-
+    
+{true && <InfoBar title={'Painel'}/>}
   <div className='Page-content'>
 
     <Navbar/>
@@ -28,7 +25,7 @@ const Home = () => {
 
     </SectionsColumns>   
    
-    {false && < Help/>}
+    {false && < Help pagehelp={'/'}/>}
     
 
   </div>
