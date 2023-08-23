@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {useNavigate,useLocation} from 'react-router-dom'
 const Navbar = () => {
-  const [path,setPath]=React.useState('')
+  
   const navigate = useNavigate()
   const location = useLocation()
-useEffect(() => {
-  setPath(location.pathname)
-})
+
   return (
     <nav className="Nav-bar">
      

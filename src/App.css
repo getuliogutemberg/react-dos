@@ -237,6 +237,28 @@ justify-content: center;
   background-color:black;
   /* width:fit-content; */
 }
+
+.Login-button:hover {
+  background: black;
+  font-size:2.7vmin;
+}
+
+.Drop-button {
+  background-color: black;
+  color: green;
+  border: none;
+  font-size:2.5vmin;
+  
+}
+.Login-button {
+  margin: 1vmin;
+  background:green;
+  color:white;
+  /* border:1px solid white; */
+  font-size:2.5vmin;
+  cursor:'pointer';
+  text-transform:uppercase;
+}
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
