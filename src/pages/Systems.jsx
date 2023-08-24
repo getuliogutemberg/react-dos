@@ -1,62 +1,80 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import SectionCard from '../components/SectionCard'
 import SectionsRows from '../components/SectionsRows.jsx'
 import SectionsColumns from '../components/SectionsColumns.jsx'
 import Help from '../components/Help.jsx'
 import InfoBar from '../components/InfoBar'
-import {useNavigate} from 'react-router-dom'
-import Drop   from '../components/Drop.jsx'
+import {useParams} from 'react-router-dom'
+import DeviceCard from '../components/DeviceCard'
+
 const Systems = () => {
 
-  const navigate = useNavigate()
+  const parametros = useParams();
 
-  const devices = [
+  // const navigate = useNavigate()
+
+  const fakeFetch = [
     {
       title: 'TITULO1',
       subtitle: 'SUBTITULO1',
       id: 1,
       imgsrc: 'https://picsum.photos/200/200',
+      scenario_id: 1
     },
     {
       title: 'TITULO2',
       subtitle: 'SUBTITULO2',
       id: 2,
       imgsrc: 'https://picsum.photos/200/200',
+      scenario_id: 1
     },
     {
       title: 'TITULO3',
       subtitle: 'SUBTITULO3',
       id: 3,
       imgsrc: 'https://picsum.photos/200/200',
+      scenario_id: 2
     },
     {
       title: 'TITULO3',
       subtitle: 'SUBTITULO3',
       id: 3,
       imgsrc: 'https://picsum.photos/200/200',
+      scenario_id: 2
     },
     {
       title: 'TITULO3',
       subtitle: 'SUBTITULO3',
       id: 3,
       imgsrc: 'https://picsum.photos/200/200',
+      scenario_id: 2
     },
     {
       title: 'TITULO3',
       subtitle: 'SUBTITULO3',
       id: 3,
       imgsrc: 'https://picsum.photos/200/200',
+      scenario_id: 3
     },
     {
       title: 'TITULO3',
       subtitle: 'SUBTITULO3',
       id: 3,
       imgsrc: 'https://picsum.photos/200/200',
+      scenario_id: 3
     },
 
 
   ]
+
+  useEffect(() => {
+
+    setDevices(() => fakeFetch.filter((element) => element.scenario_id == parametros.id))
+
+  },[parametros.id])
+
+  const [devices,setDevices] = React.useState([]) 
   
   return (
     <div style={{display: 'flex', flexDirection: 'column', flexGrow: 1}}> 
@@ -70,23 +88,13 @@ const Systems = () => {
     
       <SectionsRows>
        
-      <SectionCard title='Sistemas' >
+      <SectionCard title='Dispositivos' >
         <SectionsColumns>
         <SectionsRows>
           <div style={{display:'flex',flexWrap:'wrap'}}>
 
-
-          {devices.map((devices) => (
-            <div key={devices.id} className='Scenario' style={{width:'15vw',cursor:'pointer'}} onClick={() => navigate('/monitoring/' + devices.id.toString())}>
-            <SectionCard title={devices.title} >
-              <div style={{display:'flex',flexDirection:'column'}}>
-    
-             
-              <img src={devices.imgsrc}/>
-              </div>
-            </SectionCard></div>
-            
-            ))}
+          
+          {devices.map((devices) => <DeviceCard key={devices.id} device={devices}/>)}
           
 
             </div>

@@ -209,7 +209,7 @@ justify-content: center;
   left: 1.5vmin;
   text-transform: capitalize;
   /* cursor: move; */
-  cursor:pointer;
+  cursor:help;
   /* left: 10px; */
   font-size: calc(2px + 2vmin);
   background-color:black;
@@ -248,6 +248,7 @@ justify-content: center;
   color: green;
   border: none;
   font-size:2.5vmin;
+  cursor: pointer;
   
 }
 

@@ -10,6 +10,7 @@ import AppBar from './components/AppBar';
 import Options from './pages/Options';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import Systems from './pages/Systems';
+import Monitoring from './pages/Monitoring';
 
 
 
@@ -33,7 +34,8 @@ function App() {
       <Route exact path="/register" element={<Register/>} />
       <Route exact path="/options" element={protectrouter(<Options/>)} />
       <Route exact path="/" element={protectrouter(<Painel/>)} />
-      <Route exact path="/systems/1" element={protectrouter(<Systems/>)} />
+      <Route exact path="/systems/:id" element={protectrouter(<Systems/>)} />
+      <Route exact path="/monitoring/:id" element={protectrouter(<Monitoring/>)} />
 
       </Routes>
       {false && <Footer/>}

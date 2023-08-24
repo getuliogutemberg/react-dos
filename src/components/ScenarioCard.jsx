@@ -11,7 +11,7 @@ const ScenarioCard = (props) => {
 
      
       <img src={props.scenario.imgsrc} alt={props.scenario.title}/>
-      {is_drop && <p>oi</p>}
+      {is_drop && <p>{props.scenario.subtitle}</p>}
       </div>
     </SectionCard></div>
 }
