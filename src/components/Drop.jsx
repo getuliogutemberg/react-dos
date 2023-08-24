@@ -9,7 +9,7 @@ const Drop = (props) => {
     <div onMouseOver={() => setIs_drop(true)} onMouseOut={() => setIs_drop(false)}>{props.subtitle}</div>
     
     {is_drop && <section onMouseOver={() => setIs_drop(true)} onMouseOut={() => setIs_drop(false)}>
-      Conteudo 1
+      {props.children}
       
     </section>}
     </SectionCard>
